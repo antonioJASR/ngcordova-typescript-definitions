@@ -7,6 +7,9 @@ declare module ngcordova {
     }
 
     export interface ISocialSharingService {
+        share(message: string, message: string, file: string, link: string)
+            : ng.IPromise<any>;
+
         shareViaTwitter(message: string, image: string, link: string)
             : ng.IPromise<any>;
 

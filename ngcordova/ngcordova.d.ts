@@ -27,4 +27,19 @@ declare module ngcordova {
         canShareVia(socialType: string, message: string, image: string, 
             link: string): ng.IPromise<any>;
     }
+
+    export interface IOauthService {
+        dropbox(appKey: string) : ng.IPromise<any>;
+        digitalOcean(clientId: string, clientSecret: string) : ng.IPromise<any>;
+        github(clientId: string, clientSecret: string, appScope: Array<string>) : ng.IPromise<any>;
+        facebook(clientId: string, appScope: Array<string>) : ng.IPromise<any>;
+        linkedin(clientId: string, clientSecret: string, appScope:
+            Array<string>, state: string) : ng.IPromise<any>;
+        instagram(clientId: string, appScope: Array<string>) : ng.IPromise<any>;
+        box(clientId: string, clientSecret: string, appState: string): ng.IPromise<any>; 
+        reddit(clientId: string, clientSecret: string, appScope: Array<string>) : ng.IPromise<any>;
+        twitter(clientId: string, clientSecret: string) : ng.IPromise<any>;
+        meetup(clientId: string) : ng.IPromise<any>;
+        foursquare(clientId: string) : ng.IPromise<any>;
+    }
 }      

@@ -1,6 +1,24 @@
 /// <reference path="../angularjs/angular.d.ts" />
 
 declare module ngcordova {
+
+    export interface IFacebookDialogOptions {
+        method: string;
+        link: string;
+        caption: string;
+    }
+
+    export interface IFacebookService {
+        login(permissions: Array<string>): ng.IPromise<any>;
+        showDialog(options: ngcordova.IFacebookDialogOptions): ng.IPromise<any>;
+        api(path: string, permissions: Array<String>): ng.IPromise<any>;
+        getLoginStatus(): ng.IPromise<any>;
+        getAccessToken(): ng.IPromise<any>;
+        logout(): ng.IPromise<any>;
+
+        browserInit(id: string, version: string): void;
+    }
+
     export interface ICordovaToastService {
         show(message: string, duration: string, position: string): ng.IPromise<any>;
         showLongBottom(message: string): ng.IPromise<any>;

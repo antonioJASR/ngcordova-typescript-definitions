@@ -2,6 +2,22 @@
 
 declare module ngcordova {
 
+    export interface IInAppBrowserDetails {
+        code?: string;
+        file?: string;
+    }
+
+    
+    export interface IInAppBrowser {
+        init(config: string): ng.IScope;
+        init(config: {[key: string]: any}): ng.IScope;
+
+        open(url:string, target: string): ng.IPromise<any>;
+        close(): void;
+        executeScript(details: ngcordova.IInAppBrowserDetails): ng.IPromise<any>;
+        insertCSS(details: ngcordova.IInAppBrowserDetails): ng.IPromise<any>;
+    }
+
     export interface IFacebookDialogOptions {
         method: string;
         link: string;

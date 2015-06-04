@@ -76,4 +76,14 @@ declare module ngcordova {
         meetup(clientId: string) : ng.IPromise<any>;
         foursquare(clientId: string) : ng.IPromise<any>;
     }
+    
+     export interface ICordovaSqlite {
+
+        openDB(dbname:string,background?:number):any;
+        execute(db:any,query:string,binding:Array<any>):ng.IPromise<any>;
+        insertCollection(db:any,query:string,binding:Array<any>):ng.IPromise<any>;
+        nestedExecute(db:any,query1:string,query2:string,binding1:Array<any>,binding2:Array<any>):ng.IPromise<any>;
+        deleteDB(dbname:string,background?:number):ng.IPromise<any>;
+
+    }
 }      
